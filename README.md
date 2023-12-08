@@ -1,4 +1,3 @@
-# base-project-structure
 # WHAT ARE QUARKUS APP TEMPLATES?
 
 Resuable app templates containing cross-cutting concerns like scalability, availability, best practices, security,observability.
