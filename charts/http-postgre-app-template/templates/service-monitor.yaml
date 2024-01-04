@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: quarkus-app-monitor
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/instance: http-postgre-app-template
+    app.kubernetes.io/name: http-postgre-app-template
+    release:  unoplat-observability-prom-stack
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: http-postgre-app-template
+      app.kubernetes.io/name: http-postgre-app-template
+  endpoints:
+  - port: http
+    path: /q/metrics
+    interval: 15s
