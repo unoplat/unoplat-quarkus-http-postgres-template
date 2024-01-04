@@ -71,3 +71,9 @@ Kudos to Quarkus for redefining the future of java.
  - Cost Monitoring baked In.
  - Spotify Backstage App/Developer Portal Template Integration for Easy Discovery and Collaboration across Teams.
 
+## Get started
+
+- go to code/base-project/
+- do "tilt up" on terminal
+- 
+
