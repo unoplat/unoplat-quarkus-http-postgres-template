@@ -14,7 +14,7 @@ There is a 10x difference inspite of being both reactive.
 
 Why? Let us deep dive into details.
 
-As i told quarkus is not a just a mere framework approach. To make sure you get performance and memory footprint to likes of golang, all famous db drivers are vertically integrated with vertx event loop threadpool (that is what quarkus uses underneath).
+To make sure you get performance and memory footprint to likes of golang, all famous db drivers are vertically integrated with vertx event loop threadpool (that is what quarkus uses underneath).
 
 Basically the whole async definition is rewritten by quarkus by essentially not using any other hidden threadpool. Everything vertically integrates with vertx event pool.
 
@@ -69,13 +69,5 @@ Kudos to Quarkus for redefining the future of java.
  - BDD Templates using Cucumber Baked In.
  - Helm Reconcilation Using Flux/CD Baked In.
  - Cost Monitoring baked In.
- - Spotify Backstage App/Developer Portal Template Integration for Easy Discovery and Collaboration across Teams. 
+ - Spotify Backstage App/Developer Portal Template Integration for Easy Discovery and Collaboration across Teams.
 
-## CURRENT PROGRESS
-- Http-Postgres template available as https://github.com/unoplat/unoplat-quarkus-http-postgres-template.
-- Includes best practices of Quarkus HIBERNATES AND Reactive HTTP Templates.
-- Container Vulnerability Scan using Trivy which is part of CI/CD pipeline. 
-
-
-## Future
-- https://quarkus.io/blog/jpastreamer-extension/
