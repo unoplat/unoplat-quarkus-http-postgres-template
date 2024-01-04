@@ -2,7 +2,7 @@
 
 Resuable app templates containing cross-cutting concerns like scalability, availability, best practices, security,observability.
 
-The app template will be based on Source and Sink with business logic externalised. 
+The app template will be based on Source and Sink with extensible business logic. 
 
 Inspiration is from spotify backstage app templates.
 
