@@ -7,8 +7,8 @@ import org.demo.models.generic.PaginatedResult;
 
 public interface ProductHealthServiceInterface {
 
-    public ProductHealth saveProductHealth(ProductHealth entity);
+    public void saveProductHealth(ProductHealth entity);
 
-    public PaginatedResult<ProductHealth> findProductsByMinHealthScore(int minHealthScore, int page, int size, Map<String, String> sortBy);
+    public PaginatedResult<ProductHealth> findProductsByMinHealthScore(int minHealthScore, int page, int size);
     
 }

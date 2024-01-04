@@ -12,9 +12,12 @@ import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.jboss.resteasy.reactive.RestResponse;
 import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+
+
 @Path("/product-health")
 public class ProductHealthController  {
 
@@ -25,6 +28,7 @@ public class ProductHealthController  {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    @Transactional
     @Operation(summary = "Create a new product health record", description = "Creates a new product health record and returns its details")
     @APIResponse(responseCode = "201", description = "Product health record created",
                  content = @Content(mediaType = MediaType.APPLICATION_JSON,
@@ -47,8 +51,9 @@ public class ProductHealthController  {
     public RestResponse<PaginatedResult<ProductHealth>> findByMinHealthScore(
             ProductHealthQueryDTO searchParams) {
     
-        PaginatedResult<ProductHealth> result = productHealthServiceInterface.findProductsByMinHealthScore(searchParams.getMinHealthScore(), searchParams.getPage(), searchParams.getSize(), searchParams.getSortBy());
+        PaginatedResult<ProductHealth> result = productHealthServiceInterface.findProductsByMinHealthScore(searchParams.getMinHealthScore(), searchParams.getPage(), searchParams.getSize());
         return RestResponse.ok(result);
     }
+
 }
 

@@ -1,5 +1,8 @@
 package org.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,14 +17,13 @@ import lombok.Setter;
 @Setter
 @Getter
 public class ProductHealth {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
+    @JsonProperty("product_name")
     @Column(name = "product_name", nullable = false)
+    @Id
     private String productName;
-
+    
+    @JsonProperty("health_score") 
     @Column(name = "health_score")
     private int healthScore;
 
