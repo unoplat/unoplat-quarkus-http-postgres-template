@@ -1,0 +1,14 @@
+
+
+local_resource('jar-build',cmd='mvn clean package',deps=['pom.xml'],resource_deps=['database-deployment'])
+custom_repo="ttl.sh/http-postgre-app-template"
+allow_k8s_contexts('orbstack')
+docker_build(custom_repo,'.')
+yaml= helm(
+    '../../charts/http-postgre-app-template',
+    name='http-postgre-app-template',
+    namespace='app-template'
+)
+k8s_yaml(yaml)
+k8s_resource('http-postgre-app-template', port_forwards="8080")
+

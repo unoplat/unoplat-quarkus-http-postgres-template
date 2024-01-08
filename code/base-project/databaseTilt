@@ -1,0 +1,1 @@
+local_resource('database-deployment',cmd='kubectl apply -f https://raw.githubusercontent.com/unoplat/unoplat-db-sql-postgres/main/charts/postgres-manifest/postgres.yaml -n app-template')
